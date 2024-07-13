@@ -22,29 +22,29 @@
 variable "network_tag" {
  description = "Network tag to let specific firewall rule to impliment on specifc VM"
  type        = string
- default     = "vpn-server"
+ default     = "vpn-server"                                                                    # Custom Network Tag
 }
 
 variable "selected_region" {
  description = "Region of IP reservtion"
  type        = string
- default     = "europe-west6"
+ default     = "europe-west6"                                                                   # Region of deployment
 }
 
 variable "selected_zone" {
  description = "Zone of VM deployment"
  type        = string
- default     = "europe-west6-a"
+ default     = "europe-west6-a"                                                                 # Zone of deployment
 }
 
 variable "vm_machine_type" {
  description = "VM type"
  type        = string
- default     = "e2-micro"
+ default     = "e2-micro"                                                                       # VM type to deploy
 }
 
 variable "allowed_port" {
  description = "Firewall port"
  type        = string
- default     = "51820"
+ default     = "51820"                                                                          # Default port
 }

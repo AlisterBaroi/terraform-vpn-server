@@ -1,15 +1,5 @@
 # Terraaform VPN server for GCP (WireGuard Server)
-The codes in this folder (/CloudSQL) create and deploy the GCP ``Cloud SQL Instance`` automatically, with the following configurations:
-| Database Configuration  |           Value         |
-|-------------------------|-------------------------|
-|      Database Type      |        MySQL 8.0        |
-|      CPU                |             1           |
-|    CPU Type             |        Dedicated        |
-|      RAM                |         3.75 GB         |
-|    Storage              |         10 GB           |
-|  Storage Type           | Sold State Drive (SSD)  |
-|    Delete Protection    |         True            |
-|    Region               |      europe-west2       |
+This is a Terraform Infrastructure-as-Code (IaC) project to deploy WireGuard VPN Server on Google Cloud Platform (GCP), and crate VPN clients, for users to tunnel through (my very own private VPN).
 
 ## Table of Contents
 <img src="https://github.com/user-attachments/assets/20962071-ddff-46b3-b1c8-7627c8423f17"  width="500" align="right" margin_left="200" title="Terraform" alt="Terraform Logo" >
@@ -20,7 +10,20 @@ The codes in this folder (/CloudSQL) create and deploy the GCP ``Cloud SQL Insta
 - [Clean-up](#clean-up)
 - [Terraform](#terraform)
 
-## 1. Setup
+## 1. Overview
+The codes in this folder create and deploy VMs on GCP ``Compute Engine`` automatically, with the following configurations:
+| Server Configuration    |           Value         |
+|-------------------------|-------------------------|
+|      CPU                |             1           |
+|    CPU Type             |        Dedicated        |
+|      RAM                |         3.75 GB         |
+|    Storage              |         10 GB           |
+|  Storage Type           | Sold State Drive (SSD)  |
+|    Delete Protection    |         True            |
+|    Region               |      europe-west2       |
+|    IP type              |      static             |
+
+## 2. Setup
 - Set the GCP project info in the ``provider.tf`` file, according to the project details from the cloud console.
 
 - Get or create the credential file (json key) for a Service Account with the required roles, downnlaod, and paste it to this folder, renaming it as ``cred.json``.
@@ -29,7 +32,7 @@ The codes in this folder (/CloudSQL) create and deploy the GCP ``Cloud SQL Insta
     ```
     terraform init
     ```
-## 2. Deploy
+## 3. Deploy
 - Make changes according to your requirements (if needed).
 
 - Review the infrastructures and configurations that are to be created:
@@ -61,13 +64,13 @@ The codes in this folder (/CloudSQL) create and deploy the GCP ``Cloud SQL Insta
     sudo cat /var/config/peer1/peer1.conf
     ```
 
-## 3. Clean-up
+## 4. Clean-up
 If and when the cloud infrastructure needs to be deleted/destroyed, run the following command:
 ```
 terraform destroy
 ```
 
-## 4. Terraform
+## 5. Terraform
 Managing infrastructure manually can be error-prone, time-consuming, and difficult to replicate across environments. Infrastructure as Code (IaC) addresses these challenges by allowing us to define our infrastructure using code, which can then be versioned, tested, and automated. This repository serves as the central location for all the code related to our GCP infrastructure. It includes configurations, templates, and scripts necessary for provisioning and managing resources such as virtual machines, networking components, databases, and more:   
 - ***Declarative Configuration:*** Define infrastructure using declarative configuration files, making it easy to understand and maintain.
 - ***Version Control:*** Store infrastructure configurations alongside application code for versioning and collaboration.

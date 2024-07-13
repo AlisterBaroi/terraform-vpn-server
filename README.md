@@ -15,7 +15,7 @@ The codes in this folder create and deploy VMs on GCP ``Compute Engine`` automat
 | Server Configuration    |           Value         |
 |-------------------------|-------------------------|
 |      CPU                |             1           |
-|    VM Type              |       Spot, ec2-micro   |
+|    VM Type              |       Spot, e2-micro   |
 |      RAM                |         3.75 GB         |
 |    Storage              |         10 GB           |
 |  Storage Type           | Sold State Drive (SSD)  |

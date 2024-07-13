@@ -10,7 +10,7 @@ This is a Terraform Infrastructure-as-Code (IaC) project to deploy WireGuard VPN
 - [Clean-up](#clean-up)
 - [Terraform](#terraform)
 
-## 1. Overview
+## Overview
 The codes in this folder create and deploy VMs on GCP ``Compute Engine`` automatically, with the following configurations:
 | Server Configuration    |           Value         |
 |-------------------------|-------------------------|
@@ -23,7 +23,7 @@ The codes in this folder create and deploy VMs on GCP ``Compute Engine`` automat
 |    Region               |      europe-west2       |
 |    IP type              |      static             |
 
-## 2. Setup
+## Setup
 Before getting started, ensure you have done the following prerequisites:
 
 1. ***Install Terraform:*** Version 0.12.x or higher. Follow the installation instructions from [Terraform](https://developer.hashicorp.com/terraform/install?product_intent=terraform).
@@ -39,7 +39,7 @@ Now the setup:
     ```
     terraform init
     ```
-## 3. Deploy
+## Deploy
 - Make changes according to your requirements (if needed).
 
 - Review the infrastructures and configurations that are to be created:
@@ -71,13 +71,13 @@ Now the setup:
     sudo cat /var/config/peer1/peer1.conf
     ```
 
-## 4. Clean-up
+## Clean-up
 If and when the cloud infrastructure needs to be deleted/destroyed, run the following command:
 ```
 terraform destroy
 ```
 
-## 5. Terraform
+## Terraform
 Managing infrastructure manually can be error-prone, time-consuming, and difficult to replicate across environments. Infrastructure as Code (IaC) addresses these challenges by allowing us to define our infrastructure using code, which can then be versioned, tested, and automated. This repository serves as the central location for all the code related to our GCP infrastructure. It includes configurations, templates, and scripts necessary for provisioning and managing resources such as virtual machines, networking components, databases, and more:   
 - ***Declarative Configuration:*** Define infrastructure using declarative configuration files, making it easy to understand and maintain.
 - ***Version Control:*** Store infrastructure configurations alongside application code for versioning and collaboration.

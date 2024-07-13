@@ -30,10 +30,12 @@ Before getting started, ensure you have done the following prerequisites:
 
 2. ***Install Google Cloud SDK:*** Required for authentication and interacting with GCP services. Follow installation instructions from [Google Cloud](https://cloud.google.com/sdk/docs/install-sdk).
 
+You'll also need appropriate permissions and credentials to manage resources within your GCP project, preferably using a ``IAM Service Account`` with realavant privileges.
+
 Now the setup:  
 - Set the GCP project values in the ``provider.tf`` file, according to the project details from your GCP console.
 
-- Get or create the credential file (json key) for a Service Account with the required roles, download, and paste it to this folder, renaming it as ``cred.json``.
+- Get or create the credential file (json key) for an ``IAM Service Account`` with the required roles, download, and paste it to this folder, renaming it as ``cred.json``.
 
 - Initialize the project, as follows:
     ```

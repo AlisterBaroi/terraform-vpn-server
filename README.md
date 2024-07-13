@@ -15,7 +15,7 @@ The codes in this folder create and deploy VMs on GCP ``Compute Engine`` automat
 | Server Configuration    |           Value         |
 |-------------------------|-------------------------|
 |      CPU                |             1           |
-|    CPU Type             |        Dedicated        |
+|    VM Type              |       Spot, ec2-micro   |
 |      RAM                |         3.75 GB         |
 |    Storage              |         10 GB           |
 |  Storage Type           | Sold State Drive (SSD)  |
@@ -24,6 +24,13 @@ The codes in this folder create and deploy VMs on GCP ``Compute Engine`` automat
 |    IP type              |      static             |
 
 ## 2. Setup
+Before getting started, ensure you have done the following prerequisites:
+
+1. ***Install Terraform:*** Version 0.12.x or higher. Follow the installation instructions from [Terraform](https://developer.hashicorp.com/terraform/install?product_intent=terraform).
+
+2. ***Install Google Cloud SDK:*** Required for authentication and interacting with GCP services. Follow installation instructions from [Google Cloud](https://cloud.google.com/sdk/docs/install-sdk).
+
+Now the setup:  
 - Set the GCP project values in the ``provider.tf`` file, according to the project details from your GCP console.
 
 - Get or create the credential file (json key) for a Service Account with the required roles, download, and paste it to this folder, renaming it as ``cred.json``.
@@ -44,7 +51,7 @@ The codes in this folder create and deploy VMs on GCP ``Compute Engine`` automat
     terraform apply
     ```
 - After vpn server is provisioned, run the following script to create wireguard vpn clients: \
-  ***Note:** Change the ```PEERS``` value to how many clients you want to create.*
+  ***Note:** Change the ```PEERS``` value accordingn to your desired number of VPN clients/users you want to create.*
     ```
     docker run -d \
       --name=wireguard \
@@ -59,7 +66,7 @@ The codes in this folder create and deploy VMs on GCP ``Compute Engine`` automat
       --restart unless-stopped \
       lscr.io/linuxserver/wireguard:latest
     ```
-- Next, run the following command for each ``PEER`` and copy paste the code to WireGuard clent, or save as ``.conf`` file:
+- Next, run the following command for each ``PEER`` and copy-paste the code to WireGuard clent, or save as ``.conf`` file:
     ```
     sudo cat /var/config/peer1/peer1.conf
     ```

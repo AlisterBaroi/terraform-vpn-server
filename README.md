@@ -24,9 +24,9 @@ The codes in this folder create and deploy VMs on GCP ``Compute Engine`` automat
 |    IP type              |      static             |
 
 ## 2. Setup
-- Set the GCP project info in the ``provider.tf`` file, according to the project details from the cloud console.
+- Set the GCP project values in the ``provider.tf`` file, according to the project details from your GCP console.
 
-- Get or create the credential file (json key) for a Service Account with the required roles, downnlaod, and paste it to this folder, renaming it as ``cred.json``.
+- Get or create the credential file (json key) for a Service Account with the required roles, download, and paste it to this folder, renaming it as ``cred.json``.
 
 - Initialize the project, as follows:
     ```

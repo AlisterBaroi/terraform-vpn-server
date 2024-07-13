@@ -11,6 +11,15 @@ The codes in this folder (/CloudSQL) create and deploy the GCP ``Cloud SQL Insta
 |    Delete Protection    |         True            |
 |    Region               |      europe-west2       |
 
+## Table of Contents
+<img src="https://github.com/user-attachments/assets/20962071-ddff-46b3-b1c8-7627c8423f17"  width="500" align="right" margin_left="200" title="Terraform" alt="Terraform Logo" >
+
+- [Overview](#overview)
+- [Setup](#setup)
+- [Deploy](#deploy)
+- [Clean-up](#clean-up)
+- [Terraform](#terraform)
+
 ## 1. Setup
 - Set the GCP project info in the ``provider.tf`` file, according to the project details from the cloud console.
 
@@ -52,8 +61,16 @@ The codes in this folder (/CloudSQL) create and deploy the GCP ``Cloud SQL Insta
     sudo cat /var/config/peer1/peer1.conf
     ```
 
-## 3. Clean Up
+## 3. Clean-up
 If and when the cloud infrastructure needs to be deleted/destroyed, run the following command:
 ```
 terraform destroy
 ```
+
+## 4. Terraform
+Managing infrastructure manually can be error-prone, time-consuming, and difficult to replicate across environments. Infrastructure as Code (IaC) addresses these challenges by allowing us to define our infrastructure using code, which can then be versioned, tested, and automated. This repository serves as the central location for all the code related to our GCP infrastructure. It includes configurations, templates, and scripts necessary for provisioning and managing resources such as virtual machines, networking components, databases, and more:   
+- ***Declarative Configuration:*** Define infrastructure using declarative configuration files, making it easy to understand and maintain.
+- ***Version Control:*** Store infrastructure configurations alongside application code for versioning and collaboration.
+- ***Automated Provisioning:*** Automate the provisioning and configuration of infrastructure, reducing manual errors and saving time.
+- ***Scalability:*** Easily scale infrastructure up or down by modifying configuration files and re-running deployments.
+- ***Consistency:*** Ensure consistency across environments (development, staging, production) by using the same configuration.

@@ -1,4 +1,4 @@
-# Terraform VPN server for GCP (WireGuard Server)
+# Terraform VPN Server for GCP (WireGuard Server)
 This is a Terraform Infrastructure-as-Code (IaC) project to deploy WireGuard VPN Server on Google Cloud Platform (GCP), and crate VPN clients, for users to tunnel through (my very own private VPN).
 
 ## Table of Contents
